@@ -1,0 +1,5 @@
+# Campus Path Finder - Python Dependencies
+# Flask is used as the web framework/API layer to connect
+# the Python Dijkstra pathfinding logic with the HTML/JavaScript frontend.
+
+Flask

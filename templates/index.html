@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Path Finder</title>
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f9;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        #map {
+            flex: 1;
+            height: 600px;
+            border-radius: 10px;
+            z-index: 0;
+        }
+
+        #result {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: auto;
+            }
+
+            #map {
+                flex: none;
+                height: 450px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Campus Path Finder</h1>
+        <p>Find the shortest or most accessible route</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Route Selection -->
+        <div class="sidebar">
+
+            <h2>Find Your Route</h2>
+
+            <label for="start">Starting Location</label>
+
+            <select id="start">
+                <option value="1">Parking Garage</option>
+                <option value="2">Engineering</option>
+                <option value="3">University Centre</option>
+                <option value="4">Library</option>
+                <option value="5">Education</option>
+                <option value="6">Field House</option>
+                <option value="7">Bruno Centre</option>
+            </select>
+
+            <label for="end">Destination</label>
+
+            <select id="end">
+                <option value="4">Library</option>
+                <option value="1">Parking Garage</option>
+                <option value="2">Engineering</option>
+                <option value="3">University Centre</option>
+                <option value="5">Education</option>
+                <option value="6">Field House</option>
+                <option value="7">Bruno Centre</option>
+            </select>
+
+            <label for="mode">Route Preference</label>
+
+            <select id="mode">
+                <option value="time">Shortest Time</option>
+                <option value="accessible">Most Accessible</option>
+            </select>
+
+            <button onclick="findRoute()">
+                Find Route
+            </button>
+
+            <div id="result"></div>
+
+        </div>
+
+        <!-- University Map -->
+        <div id="map"></div>
+
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Our JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
