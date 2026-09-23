@@ -1,18 +1,18 @@
 # Campus Navigation System
 
-A web-based campus navigation system that computes optimal routes between university locations based on travel time and accessibility requirements.
+A web based campus navigation system that computes optimal routes between university locations based on travel time and accessibility requirements.
 
 ## Overview
 
-This project models a university campus as a graph and uses Dijkstra's Algorithm to determine optimal paths between locations. Users can choose between shortest-time routing and accessibility-based routing depending on their needs.
+This project models a university campus as a graph and uses Dijkstra's Algorithm to determine optimal paths between locations. Users can choose between shortest time routing and accessibility based routing depending on their needs.
 
 The pathfinding logic is implemented in Python, while Flask is used as the API layer between the Python backend and the HTML/JavaScript frontend. The calculated routes are displayed on an interactive campus map using Leaflet and OpenStreetMap.
 
 ## Features
 
 - Compute shortest paths between campus locations
-- Accessibility-aware route selection
-- Graph-based representation of campus locations
+- Accessibility aware route selection
+- Graph based representation of campus locations
 - Dijkstra's Algorithm for route optimization
 - Interactive university map
 - Display calculated routes directly on the map
