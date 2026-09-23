@@ -43,8 +43,6 @@ The pathfinding logic is implemented in Python, while Flask is used as the API l
 ## Project Structure
 
 ```text
-UNS_UPGRADE/
-│
 ├── static/
 │   └── script.js
 │
